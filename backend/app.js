@@ -15,6 +15,11 @@ app.use(express.json())
 app.use(cors())
 
 //routes
+// Inside app.js
+app.get("/", (req, res) => {
+  res.send("🟢 Personal Muneem Backend is Live!");
+});
+
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
 
 const server = () => {
